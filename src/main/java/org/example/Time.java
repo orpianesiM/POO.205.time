@@ -1,5 +1,7 @@
 package org.example;
 
+import java.text.SimpleDateFormat;
+
 public class Time {
     private int hour;
     private int minutes;

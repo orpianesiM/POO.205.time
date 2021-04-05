@@ -1,6 +1,8 @@
 package org.example;
 
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class App
@@ -52,10 +54,14 @@ public class App
         time.retrocederSegundo();
         System.out.println("-1 SEGUNDO");
         System.out.println(time.verDetalle());
-        System.out.println();
         time.avanzarSegundo();
         System.out.println("+1 SEGUNDO");
         System.out.println(time.verDetalle());
 
+        /**Fecha con dateFormat**/
+        Date date = new Date();
+        SimpleDateFormat df = new SimpleDateFormat("dd/MMMM/yy"); //4M=mes completo-3M=mes abreviado,2M=mes numerico
+        String dateFormat = df.format(date);
+        System.out.println("Dia = " + dateFormat);
     }
 }
