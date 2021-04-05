@@ -52,7 +52,7 @@ public class App
         time.retrocederSegundo();
         System.out.println("-1 SEGUNDO");
         System.out.println(time.verDetalle());
-        System.out.println();
+
         time.avanzarSegundo();
         System.out.println("+1 SEGUNDO");
         System.out.println(time.verDetalle());
