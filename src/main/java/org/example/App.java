@@ -51,12 +51,19 @@ public class App
         }while(check == 1);
 
         System.out.println(time.verDetalle());
-        time.retrocederSegundo();
-        System.out.println("-1 SEGUNDO");
-        System.out.println(time.verDetalle());
-        time.avanzarSegundo();
-        System.out.println("+1 SEGUNDO");
-        System.out.println(time.verDetalle());
+
+        if(time.getHour() > 0 && time.getMinutes() > 0 && time.getSeconds() > 0) {
+            time.retrocederSegundo();
+            System.out.println("-1 SEGUNDO");
+            System.out.println(time.verDetalle());
+        }else{
+            System.out.println("Esta intentando retroceder donde la hora es 00:00:00");
+        }
+            time.avanzarSegundo();
+            System.out.println("+1 SEGUNDO");
+            time.avanzarSegundo();
+            System.out.println("+1 SEGUNDO");
+            System.out.println(time.verDetalle());
 
         /**Fecha con dateFormat**/
         Date date = new Date();

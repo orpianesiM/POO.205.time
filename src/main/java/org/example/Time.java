@@ -52,12 +52,47 @@ public class Time {
     return sb.toString();
     }
 
-    public int avanzarSegundo(){
-        return this.seconds +=1;
-    }
-    public int retrocederSegundo(){
-        return this.seconds -=1;
+    /*************************************************************************/
+    public void avanzarSegundo(){
+        if(this.seconds >= 59) {
+            setearSegundosAvanzando();
+            if (this.minutes >= 59) {
+                setearMinutosAvanzando();
+            }
+        }else {
+            this.seconds += 1;
+        }
     }
 
+    public void setearSegundosAvanzando(){
+            this.minutes+=1;
+            this.seconds=00;
+    }
+
+    public void setearMinutosAvanzando(){
+            this.hour+=1;
+            this.minutes=00;
+    }
+
+    /*************************************************************************/
+    public void retrocederSegundo(){
+        if(this.seconds == 00) {
+            setearSegundosRetrocediendo();
+            if (this.minutes == 00) {
+                setearMinutosRetrocediendo();
+            }
+        }else{
+            this.seconds -=1;
+        }
+    }
+
+    public void setearSegundosRetrocediendo(){
+            this.seconds=59;
+    }
+
+    public void setearMinutosRetrocediendo(){
+            this.hour-=1;
+            this.minutes=59;
+    }
 
 }
